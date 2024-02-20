@@ -1,0 +1,30 @@
+// Use DBML to define your database structure
+// Docs: https://dbml.dbdiagram.io/docs
+
+
+
+Table post {
+  id integer [primary key]
+  title varchar
+  body text [note: 'Content of the post']
+  creator integer [ref: > user.id]
+  status varchar
+  created_at timestamp
+}
+
+Table post_label {
+  post_id integer [ref: > post.id]
+  label_id integer [ref: > label.id]
+}
+
+Table label {
+  id integer [primary key]
+  name varchar
+}
+
+Table user {
+  id integer [primary key]
+  email varchar
+  password varchar
+}
+
