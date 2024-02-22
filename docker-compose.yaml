@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  postgres:
+    container_name: postgres
+    image: postgres:16.2
+    ports:
+    - "5432:5432"
+    volumes:
+    - ./.postgresdata:/var/lib/postgresql/data
+    shm_size: 256m
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: brookes-portal
+    networks:
+    - brookes-portal-nt
+
+networks:
+  brookes-portal-nt:
+    driver: bridge
