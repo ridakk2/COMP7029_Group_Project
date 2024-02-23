@@ -25,7 +25,6 @@ COMP7029 Group Project Group 1
 ## How to run
 
 ```bash
-docker-compose up -d
 npm i
 npm run dev
 ```
@@ -35,4 +34,5 @@ npm run dev
 [NextJs](https://nextjs.org/)
 [Prisma](https://www.prisma.io/)
 [Tailwind Css](https://tailwindcss.com/)
+[Tailwind Components](https://tailwindui.com/components/#product-application-ui)
 [Sample project with nextjs + prisma](https://vercel.com/guides/nextjs-prisma-postgres)
