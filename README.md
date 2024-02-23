@@ -38,3 +38,7 @@ npm run db:migrate
 [Tailwind Css](https://tailwindcss.com/)
 [Tailwind Components](https://tailwindui.com/components/#product-application-ui)
 [Sample project with nextjs + prisma](https://vercel.com/guides/nextjs-prisma-postgres)
+
+
+asd
+
