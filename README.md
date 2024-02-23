@@ -39,6 +39,30 @@ npm run db:migrate
 [Tailwind Components](https://tailwindui.com/components/#product-application-ui)
 [Sample project with nextjs + prisma](https://vercel.com/guides/nextjs-prisma-postgres)
 
+## How to push your code
 
-asd
+First, add all your changes or add one by one via;
 
+```sh
+git add .
+```
+
+or
+
+```sh
+git add <path/changed-file>
+```
+
+Second, commit your changes via following cli prompts
+
+```sh
+npm run cm
+```
+
+and Finally, push your chages to remote repository;
+
+```sh
+git push
+```
+
+> For the first push, you may need to set upstream repository `git push --set-upstream origin <branch>`
