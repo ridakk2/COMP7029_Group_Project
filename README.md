@@ -25,8 +25,10 @@ COMP7029 Group Project Group 1
 ## How to run
 
 ```bash
+docker-compose up -d
 npm i
 npm run dev
+npm run db:migrate
 ```
 
 ## Useful Links

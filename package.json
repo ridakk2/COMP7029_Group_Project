@@ -6,9 +6,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "db:migrate": "prisma migrate dev",
+    "db:view": "prisma studio"
   },
   "dependencies": {
+    "@prisma/client": "^5.10.2",
     "next": "14.1.0",
     "react": "^18",
     "react-dom": "^18"
