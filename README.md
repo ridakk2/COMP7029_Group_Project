@@ -59,8 +59,6 @@ npm run db:view
 ```
 
 
-## JIRA TICKET:
-
 
 
 ## Useful Links
