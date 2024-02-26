@@ -27,9 +27,41 @@ COMP7029 Group Project Group 1
 ```bash
 docker-compose up -d
 npm i
-npm run dev
 npm run db:migrate
+npm run dev
+
 ```
+
+# Useful notes for 1st SPRINT Tasks
+
+To add a demo user manually to User table in DB
+Run following command from the root of the project folder 
+
+```bash
+
+node scripts/demo_user.js
+```
+
+Expected output:
+Demo user added: {
+  id: 1,
+  email: 'demo@example.com',
+  firstName: 'Demo',
+  lastName: 'User',
+  password: 'password123'
+}
+
+Ensure that the entry has been added to User table by visiting prisma studio by running the following command:
+
+```bash
+
+npm run db:view 
+```
+
+
+## JIRA TICKET:
+
+
 
 ## Useful Links
 
@@ -66,3 +98,6 @@ git push
 ```
 
 > For the first push, you may need to set upstream repository `git push --set-upstream origin <branch>`
+
+
+
