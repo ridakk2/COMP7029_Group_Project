@@ -58,9 +58,6 @@ Ensure that the entry has been added to User table by visiting prisma studio by 
 npm run db:view 
 ```
 
-
-
-
 ## Useful Links
 
 [NextJs](https://nextjs.org/)
