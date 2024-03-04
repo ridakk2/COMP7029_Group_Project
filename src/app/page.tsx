@@ -95,7 +95,7 @@ export default function SearchPostsByLabels() {
 
     try {
       // Perform search in the database based on labels
-      const response = await fetch(`/api/searchPostsByLabels?labels=${labels}`);
+      const response = await fetch(`/posts?labels=${labels}`);
       if (!response.ok) {
         throw new Error('Failed to search posts by labels');
       }
