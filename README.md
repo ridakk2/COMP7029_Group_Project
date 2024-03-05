@@ -19,8 +19,17 @@ COMP7029 Group Project Group 1
 | Hiromi Kanetsuka | <19278431@brookes.ac.uk> |
 | Rajpreet Kaur | <19277619@brookes.ac.uk> |
 | John Bokka | <19277388@brookes.ac.uk> |
-| John Bokka | <19277388@brookes.ac.uk> |
 | Anmol Singh | <19277618@brookes.ac.uk> |
+
+## Create .env file for local development environment
+
+Create .env file in your root project directory as below;
+
+```text
+DATABASE_URL="postgresql://admin:admin@localhost:55432/brookes-portal?schema=public"
+JWT_SECRET="0123456789"
+JWT_ISSUER="brookes.blog.local"
+```
 
 ## How to run
 
@@ -28,14 +37,15 @@ COMP7029 Group Project Group 1
 docker-compose up -d
 npm i
 npm run db:migrate
+node scripts/demo_user.js
 npm run dev
 
 ```
 
-# Useful notes for 1st SPRINT Tasks
+## Creating a demo user
 
 To add a demo user manually to User table in DB
-Run following command from the root of the project folder 
+Run following command from the root of the project folder
 
 ```bash
 
@@ -45,7 +55,7 @@ node scripts/demo_user.js
 Expected output:
 Demo user added: {
   id: 1,
-  email: 'demo@example.com',
+  email: '<demo@example.com>',
   firstName: 'Demo',
   lastName: 'User',
   password: 'password123'
@@ -93,6 +103,3 @@ git push
 ```
 
 > For the first push, you may need to set upstream repository `git push --set-upstream origin <branch>`
-
-
-
