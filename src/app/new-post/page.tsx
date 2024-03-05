@@ -5,12 +5,12 @@ import 'react-quill/dist/quill.snow.css';
 import { useUser } from '../contexts/user';
 
 import dynamic from 'next/dynamic';
-// import LabelDropdown from '../components/labelDropdown';
+import LabelDropdown from '../components/labelDropdown';
 
 export default function MyComponent() {
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
-  // const [labels, setLabels] = useState<{ id: number; name: string }[]>([]);
+  const [labels, setLabels] = useState<{ id: number; name: string }[]>([]);
   const ReactQuill = useMemo(() => dynamic(() => import('react-quill'), { ssr: false }), []);
   const { user } = useUser();
 
@@ -24,7 +24,7 @@ export default function MyComponent() {
     await fetch(`/api/users/${user.id}/posts`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${user.token}` },
-      body: JSON.stringify({ title, body }),
+      body: JSON.stringify({ title, body, labels }),
     });
   }
 
@@ -53,7 +53,7 @@ export default function MyComponent() {
             <ReactQuill theme="snow" value={body} onChange={setBody} style={{ height: '20rem' }} />
           </div>
 
-          {/* <div className="mt-10 pt-2">
+          <div className="mt-10 pt-2">
             {labels.map((label) => (
               <span
                 key={label.id}
@@ -62,16 +62,16 @@ export default function MyComponent() {
                 {label.name}
               </span>
             ))}
-          </div> */}
+          </div>
 
-          {/* <div className="flex justify-end">
+          <div className="flex justify-end">
             <LabelDropdown onChange={setLabels}></LabelDropdown>
-          </div> */}
+          </div>
 
           <div className="flex justify-end pt-5">
             <button
               type="submit"
-              className=" rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+              className="rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               onClick={handleSubmit}
             >
               Submit
