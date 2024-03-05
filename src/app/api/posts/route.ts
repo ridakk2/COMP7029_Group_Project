@@ -1,5 +1,27 @@
 import type { NextApiRequest } from 'next';
-import prisma from '../../../lib/prisma';
+import prisma from '../../../../lib/prisma';
+
+export interface I_post {
+  id: number;
+  createdAt: string;
+  title: string;
+  content: string;
+  authorId: number;
+  author: {
+    id: number;
+    email: string;
+    firstName: string;
+    lastName: string;
+  };
+  labels: {
+    postId: number;
+    labelId: number;
+    label: {
+      id: number;
+      name: string;
+    };
+  }[];
+}
 
 export async function GET(req: NextApiRequest) {
   const search = new URL(req.url || '').search;
@@ -32,6 +54,11 @@ export async function GET(req: NextApiRequest) {
 
   const posts = await prisma.post.findMany({
     ...whereClause,
+    orderBy: [
+      {
+        createdAt: 'desc',
+      },
+    ],
     include: {
       labels: {
         include: {

@@ -3,7 +3,6 @@
 import React, { useState, useMemo } from 'react';
 import 'react-quill/dist/quill.snow.css';
 import { useUser } from '../contexts/user';
-
 import dynamic from 'next/dynamic';
 import LabelDropdown from '../components/labelDropdown';
 
