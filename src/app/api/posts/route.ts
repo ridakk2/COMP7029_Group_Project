@@ -35,19 +35,24 @@ export async function GET(req: NextApiRequest) {
       .map((str) => `${str}`.trim())
       .filter((str) => str !== '');
 
-    console.log(labels);
-
     whereClause = {
       where: {
-        labels: {
-          some: {
-            label: {
-              name: {
-                in: labels,
+        OR: [
+          {
+            labels: {
+              some: {
+                label: {
+                  name: {
+                    in: labels,
+                    mode: 'insensitive',
+                  },
+                },
               },
             },
           },
-        },
+          ...labels.map((label) => ({ title: { contains: label, mode: 'insensitive' } })),
+          ...labels.map((label) => ({ content: { contains: label, mode: 'insensitive' } })),
+        ],
       },
     };
   }
