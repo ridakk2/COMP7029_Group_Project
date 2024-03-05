@@ -34,7 +34,7 @@ export default function MyComponent() {
   return (
     <>
       <div className="flex flex-auto flex-col justify-center px-6 lg:px-8">
-        <div className="m-10 sm:mx-auto sm:w-full">
+        <div className="m-10 sm:mx-auto w-2/3">
           <div>
             <label htmlFor="title" className="block text-sm font-medium leading-6 text-gray-900">
               Title
