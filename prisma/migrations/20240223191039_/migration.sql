@@ -50,4 +50,5 @@ ALTER TABLE "Post" ADD CONSTRAINT "Post_authorId_fkey" FOREIGN KEY ("authorId") 
 ALTER TABLE "LabelsOnPosts" ADD CONSTRAINT "LabelsOnPosts_postId_fkey" FOREIGN KEY ("postId") REFERENCES "Post"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
+--  `      \
 ALTER TABLE "LabelsOnPosts" ADD CONSTRAINT "LabelsOnPosts_labelId_fkey" FOREIGN KEY ("labelId") REFERENCES "Label"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
