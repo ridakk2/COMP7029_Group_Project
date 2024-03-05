@@ -87,7 +87,7 @@ export default function Home() {
 
   return (
     <main>
-      <div className="bg-gray-200 py-24 sm:py-32">
+      <div className="bg-gray-200 py-8 sm:py-12">
         <div className="mx-auto max-w-7xl px-6 lg:px-8 relative">
           <div className="bg-yellow-500 py-8 px-5 top-0 left-0 right-0 ml-0">
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-6xl">TDE Research Blog</h2>
