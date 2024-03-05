@@ -14,8 +14,8 @@ async function addDemoUser() {
         email: 'demo1@example.com',
         firstName: 'Demo',
         lastName: 'User',
-        password: await bcrypt.hash('password123', 12)
-      }
+        password: await bcrypt.hash('password123', 12),
+      },
     });
 
     console.log('Demo user added:', demoUser);

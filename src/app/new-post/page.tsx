@@ -5,6 +5,7 @@ import 'react-quill/dist/quill.snow.css';
 import { useUser } from '../contexts/user';
 import dynamic from 'next/dynamic';
 import LabelDropdown from '../components/labelDropdown';
+import { useRouter } from 'next/navigation';
 
 export default function MyComponent() {
   const [title, setTitle] = useState('');
@@ -12,6 +13,7 @@ export default function MyComponent() {
   const [labels, setLabels] = useState<{ id: number; name: string }[]>([]);
   const ReactQuill = useMemo(() => dynamic(() => import('react-quill'), { ssr: false }), []);
   const { user } = useUser();
+  const router = useRouter();
 
   const handleTitleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setTitle(event.target.value);
@@ -25,6 +27,8 @@ export default function MyComponent() {
       headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${user.token}` },
       body: JSON.stringify({ title, body, labels }),
     });
+
+    router.push('/');
   }
 
   return (
@@ -70,7 +74,7 @@ export default function MyComponent() {
           <div className="flex justify-end pt-5">
             <button
               type="submit"
-              className="rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+              className="bg-brookes flex justify-center rounded-md mx-1 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 text-bigwhite"
               onClick={handleSubmit}
             >
               Submit

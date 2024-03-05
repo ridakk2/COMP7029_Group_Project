@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import { UserProvider } from './contexts/user';
+import Header from './components/header';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -13,7 +15,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full bg-white">
-      <body className={`h-full`}>{children}</body>
+      <body className={`h-full`}>
+        <UserProvider>
+          <Header></Header>
+          {children}
+        </UserProvider>
+      </body>
     </html>
   );
 }
