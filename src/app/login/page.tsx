@@ -1,6 +1,6 @@
 'use client';
 
-import { FormEvent } from "react";
+import { FormEvent } from 'react';
 
 export default function Login() {
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -26,7 +26,7 @@ export default function Login() {
             alt="Your Company"
           /> */}
           <div className="block text-center">
-            <img src="/Brookeslogo.png" alt="Brookeslogo" className="max-h-16 inline-block"/>
+            <img src="/Brookeslogo.png" alt="Brookeslogo" className="max-h-16 inline-block" />
           </div>
           <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
             Oxford Brookes Research Blog Page
