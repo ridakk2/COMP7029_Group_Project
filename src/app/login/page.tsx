@@ -1,8 +1,14 @@
 'use client';
 
 import { FormEvent } from 'react';
+import { useUser } from '../contexts/user';
+import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 
 export default function Login() {
+  const { setUser } = useUser();
+  const router = useRouter();
+
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
@@ -10,11 +16,18 @@ export default function Login() {
     const email = formData.get('email');
     const password = formData.get('password');
 
-    await fetch('/api/login', {
+    const response = await fetch('/api/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email, password }),
     });
+
+    if (response.ok) {
+      const data = await response.json();
+      setUser(data);
+
+      router.push('/new-post');
+    }
   }
   return (
     <>
@@ -26,7 +39,13 @@ export default function Login() {
             alt="Your Company"
           /> */}
           <div className="block text-center">
-            <img src="/Brookeslogo.png" alt="Brookeslogo" className="max-h-16 inline-block" />
+            <Image
+              width={200}
+              height={200}
+              src="/Brookeslogo.png"
+              alt="Brookeslogo"
+              className="max-h-16 inline-block"
+            />
           </div>
           <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
             Oxford Brookes Research Blog Page

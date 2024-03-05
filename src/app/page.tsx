@@ -87,7 +87,6 @@ export default function Home() {
 
   return (
     <main>
-      <img src="/logo_2.png" alt="logo" className="absolute top-5 left-12 h-25 w-60 p-0" />
       <div className="bg-gray-200 py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8 relative">
           <div className="bg-yellow-500 py-8 px-5 top-0 left-0 right-0 ml-0">
@@ -105,11 +104,11 @@ export default function Home() {
                 placeholder="Enter search terms separated by commas"
                 value={searchInput}
                 onChange={(e) => setSearchInput(e.target.value)}
-                className="border-gray-300 focus:ring-indigo-500 focus:border-indigo-500 block w-1/3 rounded-md sm:text-sm border p-2"
+                className="border-gray-300 focus:ring-indigo-500 focus:border-indigo-500 block w-4/5 rounded-md sm:text-sm border p-2"
               />
               <button
                 type="submit"
-                className="ml-2 inline-flex justify-center w-24 rounded-md border border-transparent shadow-sm px-4 py-2 bg-indigo-600 text-base leading-6 font-medium text-white hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 sm:text-sm"
+                className="bg-brookes flex justify-center rounded-md w-1/5 mx-1 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 text-bigwhite"
               >
                 Search
               </button>
