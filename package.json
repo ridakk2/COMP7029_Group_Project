@@ -11,7 +11,9 @@
     "lint:commit": "commitlint --edit",
     "db:migrate": "prisma migrate dev",
     "db:view": "prisma studio",
-    "prepare": "husky"
+    "prepare": "husky",
+    "release": "commit-and-tag-version --yes --conventional-commits",
+    "release:dry": "commit-and-tag-version --conventional-commits --dry-run"
   },
   "config": {
     "commitizen": {
