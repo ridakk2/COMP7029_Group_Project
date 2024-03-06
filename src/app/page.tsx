@@ -3,7 +3,7 @@
 
 import { useState, FormEvent, useEffect } from 'react';
 import { I_post } from '../app/api/posts/route';
-import { UserIcon } from '@heroicons/react/20/solid';
+import { UserIcon, EnvelopeIcon } from '@heroicons/react/20/solid';
 
 const formatDate = (dateString: string) => {
   const date = new Date(dateString);
@@ -142,7 +142,7 @@ export default function Home() {
                   </p>
                 </div>
                 <div className="relative mt-8 flex items-center gap-x-4">
-                  <UserIcon className="h-10 w-10 rounded-full bg-gray-50" />
+                  <UserIcon className="h-10 w-10 drop-shadow-lg" color="gray" />
                   <div className="text-sm leading-6">
                     <p className="font-semibold text-gray-900">
                       <a>
@@ -151,6 +151,9 @@ export default function Home() {
                       </a>
                     </p>
                   </div>
+                  <a href={`mailto:${post.author.email}`}>
+                    <EnvelopeIcon className="w-4 h-4 drop-shadow-lg" />
+                  </a>
                 </div>
               </article>
             ))}
