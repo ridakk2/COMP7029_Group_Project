@@ -1,16 +1,19 @@
 'use client';
 
-import { FormEvent } from 'react';
+import { FormEvent, useState } from 'react';
 import { useUser } from '../contexts/user';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 
 export default function Login() {
   const { setUser } = useUser();
+  const [error, setError] = useState(null);
   const router = useRouter();
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+
+    setError(null);
 
     const formData = new FormData(event.currentTarget);
     const email = formData.get('email');
@@ -27,8 +30,13 @@ export default function Login() {
       setUser(data);
 
       router.push('/new-post');
+    } else {
+      const data = await response.json();
+
+      setError(data.error);
     }
   }
+
   return (
     <>
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
@@ -102,12 +110,17 @@ export default function Login() {
               </button>
             </div>
           </form>
-
-          <p className="mt-10 text-center text-sm text-gray-500">
-            {' '}
-            <a href="#" className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500"></a>
-          </p>
         </div>
+
+        {error && (
+          <div
+            className="mt-10 bg-red-100 border-[1px] border-red-400 text-center text-brookes px-4 py-3 rounded relative"
+            role="alert"
+          >
+            <strong className="font-bold">Login Failed! </strong>
+            <span className="block sm:inline">{error}</span>
+          </div>
+        )}
       </div>
     </>
   );
