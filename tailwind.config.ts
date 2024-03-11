@@ -12,10 +12,13 @@ const config: Config = {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
-    },
-    colors: {
-      brookes: '#d10373',
-      bigwhite: '#ffffff',
+      colors: {
+        brookes: '#D10373',
+        'brookes-60': '#E368AB',
+        'brookes-20': '#F6CDE3',
+        'brookes-10': '#FAE5F1',
+        bigwhite: '#ffffff',
+      },
     },
   },
   plugins: [require('@tailwindcss/forms')],

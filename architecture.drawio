@@ -1,0 +1,54 @@
+<mxfile host="Electron" modified="2024-03-11T14:08:35.901Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.0.4 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="n3T_RpIoU8zMktFYP48q" version="24.0.4" type="device">
+  <diagram name="Page-1" id="iR6TXY3yIuwCh50SdgoO">
+    <mxGraphModel dx="1026" dy="655" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="7hDyWcbyjO24fMXUJ9-J-13" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry width="360" height="440" as="geometry" />
+        </mxCell>
+        <mxCell id="7hDyWcbyjO24fMXUJ9-J-11" value="NextJs" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=bottom;align=right;" parent="1" vertex="1">
+          <mxGeometry x="40" y="40" width="150" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="7hDyWcbyjO24fMXUJ9-J-1" value="SQL" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="40" y="330" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="7hDyWcbyjO24fMXUJ9-J-3" value="Object&lt;div&gt;Storage&lt;/div&gt;" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" parent="1" vertex="1">
+          <mxGeometry x="130" y="330" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="7hDyWcbyjO24fMXUJ9-J-4" value="NextJs" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=bottom;align=right;" parent="1" vertex="1">
+          <mxGeometry x="40" y="200" width="150" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="7hDyWcbyjO24fMXUJ9-J-8" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="7hDyWcbyjO24fMXUJ9-J-5" target="7hDyWcbyjO24fMXUJ9-J-1" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7hDyWcbyjO24fMXUJ9-J-5" value="Api" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="55" y="225" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="7hDyWcbyjO24fMXUJ9-J-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;endArrow=classic;endFill=1;startArrow=classic;startFill=1;" parent="1" source="7hDyWcbyjO24fMXUJ9-J-6" target="7hDyWcbyjO24fMXUJ9-J-5" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7hDyWcbyjO24fMXUJ9-J-12" value="http" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="7hDyWcbyjO24fMXUJ9-J-7" vertex="1" connectable="0">
+          <mxGeometry x="-0.0545" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7hDyWcbyjO24fMXUJ9-J-6" value="&lt;div&gt;Frontend&lt;/div&gt;&lt;div&gt;SSR + React&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="55" y="65" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="7hDyWcbyjO24fMXUJ9-J-10" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="7hDyWcbyjO24fMXUJ9-J-5" target="7hDyWcbyjO24fMXUJ9-J-3" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="125" y="270" as="sourcePoint" />
+            <mxPoint x="80" y="340" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7hDyWcbyjO24fMXUJ9-J-14" value="PostgreSQL is used as an SQL database to store relational data.&lt;br&gt;&lt;br&gt;Minio Sever is used as an object storage in local environments to store documents, images and files, etc..." style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="200" y="290" width="140" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="7hDyWcbyjO24fMXUJ9-J-15" value="Both Frontend &amp;amp; Backend application is built with NextJs.&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Frontend is server side rendered with NextJs + React + TailwindCSS.&lt;/span&gt;&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="210" y="40" width="130" height="115" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

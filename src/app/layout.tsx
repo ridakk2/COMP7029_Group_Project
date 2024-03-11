@@ -16,10 +16,12 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full bg-white">
       <body className={`h-full`}>
-        <UserProvider>
-          <Header></Header>
-          {children}
-        </UserProvider>
+        <main>
+          <UserProvider>
+            <Header></Header>
+            {children}
+          </UserProvider>
+        </main>
       </body>
     </html>
   );
