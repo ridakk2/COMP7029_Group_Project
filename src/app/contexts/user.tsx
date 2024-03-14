@@ -1,8 +1,8 @@
 'use client';
 
-import * as React from 'react';
+import { createContext, Dispatch, SetStateAction, useContext, useState, useMemo } from 'react';
 
-const UserContext = React.createContext({
+const UserContext = createContext({
   user: {
     id: 0,
     email: '',
@@ -11,8 +11,8 @@ const UserContext = React.createContext({
     token: '',
   },
   // @ts-ignore
-  setUser: React.Dispatch<
-    React.SetStateAction<{
+  setUser: Dispatch<
+    SetStateAction<{
       id: number;
       email: string;
       firstName: string;
@@ -23,7 +23,7 @@ const UserContext = React.createContext({
 });
 
 function useUser() {
-  const context = React.useContext(UserContext);
+  const context = useContext(UserContext);
   if (!context) {
     throw new Error(`userUser must be used within a UserProvider`);
   }
@@ -32,8 +32,8 @@ function useUser() {
 }
 
 function UserProvider(props: any) {
-  const [user, setUser] = React.useState('');
-  const value = React.useMemo(() => ({ user, setUser }), [user]);
+  const [user, setUser] = useState('');
+  const value = useMemo(() => ({ user, setUser }), [user]);
 
   return <UserContext.Provider value={value} {...props} />;
 }

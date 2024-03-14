@@ -1,4 +1,3 @@
-import type { NextApiRequest } from 'next';
 import prisma from '../../../../lib/prisma';
 
 export interface I_post {
@@ -23,8 +22,8 @@ export interface I_post {
   }[];
 }
 
-export async function GET(req: NextApiRequest) {
-  const search = new URL(req.url || '').search;
+export async function GET(req: Request) {
+  const search = new URL(req.url).search;
   const urlParams = new URLSearchParams(search);
   const labelParam = urlParams.get('labels');
   let whereClause = {};

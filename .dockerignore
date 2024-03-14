@@ -1,0 +1,15 @@
+Dockerfile
+.dockerignore
+node_modules
+npm-debug.log
+README.md
+.next
+docker
+.git
+terraform
+.postgresdata
+.husky
+.vscode
+dbdiagram.dbml
+architecture.drawio
+.env
