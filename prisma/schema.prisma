@@ -14,28 +14,29 @@ datasource db {
 }
 
 model Post {
-  id        Int      @id @default(autoincrement())
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  title     String   @db.VarChar(255)
+  id        Int             @id @default(autoincrement())
+  createdAt DateTime        @default(now())
+  updatedAt DateTime        @updatedAt
+  title     String          @db.VarChar(255)
   content   String?
-  published Boolean  @default(false)
-  author    User     @relation(fields: [authorId], references: [id])
+  published Boolean         @default(false)
+  author    User            @relation(fields: [authorId], references: [id])
   authorId  Int
-  labels LabelsOnPosts[]
+  labels    LabelsOnPosts[]
 }
 
 model User {
-  id        Int      @id @default(autoincrement())
-  email     String   @unique
+  id        Int       @id @default(autoincrement())
+  email     String    @unique
   firstName String?
   lastName  String?
   password  String
   posts     Post[]
+  Profile   Profile[]
 }
 
 model Label {
-  id    Int                 @id @default(autoincrement())
+  id    Int             @id @default(autoincrement())
   name  String
   posts LabelsOnPosts[]
 }
@@ -43,10 +44,35 @@ model Label {
 model LabelsOnPosts {
   post       Post     @relation(fields: [postId], references: [id])
   postId     Int // relation scalar field (used in the `@relation` attribute above)
-  label   Label @relation(fields: [labelId], references: [id])
+  label      Label    @relation(fields: [labelId], references: [id])
   labelId    Int // relation scalar field (used in the `@relation` attribute above)
   assignedAt DateTime @default(now())
   assignedBy String
 
   @@id([postId, labelId])
+}
+
+model Profile {
+  id Int @id @default(autoincrement())
+
+  user   User @relation(fields: [userId], references: [id])
+  userId Int // relation scalar field (used in the `@relation` attribute above)
+
+  title String?
+
+  organizations String? @db.VarChar(255)
+
+  description String? @db.VarChar(255)
+
+  publications String? @db.VarChar(255)
+
+  twitterUrl String?
+
+  linkedinUrl String?
+
+  githubUrl String?
+
+  mediumUrl String?
+
+  image String? @db.VarChar(255)
 }
