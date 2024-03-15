@@ -1,5 +1,6 @@
 // Parent component
 'use client';
+import Link from 'next/link';
 
 import { useState, useEffect } from 'react';
 import { I_post } from '../app/api/posts/route';
@@ -146,13 +147,15 @@ export default function Home() {
                 </p>
               </div>
               <div className="relative mt-8 flex items-center gap-x-4">
-                <UserIcon className="h-10 w-10 drop-shadow-lg" color="gray" />
+                <Link href={`/user/${post.author.id}@${post.author.firstName}:${post.author.lastName}`}>   
+                    <UserIcon className="h-10 w-10 drop-shadow-lg" color="gray" />
+                </Link>
                 <div className="text-sm leading-6">
                   <p className="font-semibold text-gray-900">
-                    <a>
+                  <Link href={`/user/${post.author.id}@${post.author.firstName}:${post.author.lastName}`}> 
                       <span className="absolute inset-0" />
                       {post.author.firstName} {post.author.lastName}
-                    </a>
+                  </Link>
                   </p>
                 </div>
                 <a href={`mailto:${post.author.email}`}>
