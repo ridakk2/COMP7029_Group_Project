@@ -67,6 +67,22 @@ Ensure that the entry has been added to User table by visiting prisma studio by 
 
 npm run db:view 
 ```
+## Adding Profile table to the Database
+
+After the changes in the schema.prisma file, the following commands allow to reflect it in the local env database accordingly.
+You may try to run the following 2 commands first:
+```bash
+npm run db:migrate
+npm run db:view 
+```
+If these commands does not create the Profile table, then you may need to run the first 2 commands first and then the :migrate and :view commands to modify and view the db locally.
+
+```bash
+npx prisma format 
+npx prisma generate
+npm run db:migrate
+npm run db:view 
+```
 
 ## Useful Links
 
