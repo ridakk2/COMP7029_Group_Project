@@ -23,6 +23,10 @@ model Post {
   author    User            @relation(fields: [authorId], references: [id])
   authorId  Int
   labels    LabelsOnPosts[]
+  abstract  String?          @db.VarChar(255)
+  projectGoals String?       @db.VarChar(255)
+  methodology   String?      @db.VarChar(255)
+  potentialAppl String?      @db.VarChar(255)
 }
 
 model User {
