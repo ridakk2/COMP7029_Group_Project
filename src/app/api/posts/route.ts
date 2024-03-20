@@ -6,6 +6,7 @@ export interface I_post {
   title: string;
   content: string;
   authorId: number;
+  slug: string;
   author: {
     id: number;
     email: string;

@@ -1,6 +1,13 @@
 import prisma from '../../../../../../lib/prisma';
 import { verifyToken } from '../../../../../../lib/jwt';
 import { headers } from 'next/headers';
+import { nanoid } from 'nanoid';
+
+const kebabCase = (string: string) =>
+  string
+    .replace(/([a-z])([A-Z])/g, '$1-$2')
+    .replace(/[\s_]+/g, '-')
+    .toLowerCase();
 
 export async function POST(req: Request, { params }: { params: { userId: string } }) {
   const headersList = headers();
@@ -38,6 +45,7 @@ export async function POST(req: Request, { params }: { params: { userId: string 
       title: body.title,
       content: body.body,
       authorId: userId,
+      slug: `${kebabCase(body.title)}-${nanoid(12)}`,
     },
   });
 

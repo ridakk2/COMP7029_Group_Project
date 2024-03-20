@@ -121,48 +121,50 @@ export default function Home() {
         </div>
         <div className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
           {posts.map((post) => (
-            <article key={post.id} className="flex max-w-xl flex-col items-start justify-between">
-              <div className="flex items-center gap-x-4 text-xs">
-                <time dateTime={post.datetime} className="text-gray-500">
-                  {post.date}
-                </time>
-                {post.labels.map((postLabel) => (
-                  <span
-                    key={`${postLabel.postId}_${postLabel.labelId}`}
-                    className="inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10"
-                  >
-                    {postLabel.label.name}
-                  </span>
-                ))}
-              </div>
-              <div className="group relative">
-                <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
-                  <a>
-                    <span className="absolute inset-0" />
-                    {post.title}
-                  </a>
-                </h3>
-                <p className="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">
-                  <div dangerouslySetInnerHTML={{ __html: post.content }} />
-                </p>
-              </div>
-              <div className="relative mt-8 flex items-center gap-x-4">
-                <Link href={`/user/${post.author.id}@${post.author.firstName}:${post.author.lastName}`}>   
-                    <UserIcon className="h-10 w-10 drop-shadow-lg" color="gray" />
-                </Link>
-                <div className="text-sm leading-6">
-                  <p className="font-semibold text-gray-900">
-                  <Link href={`/user/${post.author.id}@${post.author.firstName}:${post.author.lastName}`}> 
+            <Link key={post.id} href={`/post/${post.slug}`}>
+              <article key={post.id} className="flex max-w-xl flex-col items-start justify-between">
+                <div className="flex items-center gap-x-4 text-xs">
+                  <time dateTime={post.datetime} className="text-gray-500">
+                    {post.date}
+                  </time>
+                  {post.labels.map((postLabel) => (
+                    <span
+                      key={`${postLabel.postId}_${postLabel.labelId}`}
+                      className="inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10"
+                    >
+                      {postLabel.label.name}
+                    </span>
+                  ))}
+                </div>
+                <div className="group relative">
+                  <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
+                    <a>
                       <span className="absolute inset-0" />
-                      {post.author.firstName} {post.author.lastName}
-                  </Link>
+                      {post.title}
+                    </a>
+                  </h3>
+                  <p className="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">
+                    <div dangerouslySetInnerHTML={{ __html: post.content }} />
                   </p>
                 </div>
-                <a href={`mailto:${post.author.email}`}>
-                  <EnvelopeIcon className="w-4 h-4 drop-shadow-lg" />
-                </a>
-              </div>
-            </article>
+                <div className="relative mt-8 flex items-center gap-x-4">
+                  <Link href={`/user/${post.author.id}@${post.author.firstName}:${post.author.lastName}`}>
+                    <UserIcon className="h-10 w-10 drop-shadow-lg" color="gray" />
+                  </Link>
+                  <div className="text-sm leading-6">
+                    <p className="font-semibold text-gray-900">
+                      <Link href={`/user/${post.author.id}@${post.author.firstName}:${post.author.lastName}`}>
+                        <span className="absolute inset-0" />
+                        {post.author.firstName} {post.author.lastName}
+                      </Link>
+                    </p>
+                  </div>
+                  <a href={`mailto:${post.author.email}`}>
+                    <EnvelopeIcon className="w-4 h-4 drop-shadow-lg" />
+                  </a>
+                </div>
+              </article>
+            </Link>
           ))}
         </div>
       </div>
