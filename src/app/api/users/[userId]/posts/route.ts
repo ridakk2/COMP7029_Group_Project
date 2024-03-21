@@ -43,6 +43,10 @@ export async function POST(req: Request, { params }: { params: { userId: string 
   const createdPost = await prisma.post.create({
     data: {
       title: body.title,
+      projectGoals: body.projectgoals,
+      methodology: body.methodologies,
+      potentialAppl: body.potentialApplications,
+      abstract: body.abstract,
       content: body.body,
       authorId: userId,
       slug: `${kebabCase(body.title)}-${nanoid(12)}`,
