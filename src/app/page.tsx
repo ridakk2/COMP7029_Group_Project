@@ -1,6 +1,7 @@
 // Parent component
 'use client';
 import Link from 'next/link';
+import Image from 'next/image';
 
 import { useState, useEffect } from 'react';
 import { I_post } from '../app/api/posts/route';
@@ -123,8 +124,8 @@ export default function Home() {
           {posts.map((post) => (
             <Link key={post.id} href={`/post/${post.slug}`}>
               <article key={post.id} className="flex max-w-xl flex-col items-start justify-between">
-                <div className="flex items-center gap-x-4 text-xs">
-                  <time dateTime={post.datetime} className="text-gray-500">
+                <div className="flex items-center gap-x-4 text-xs mb-2">
+                  <time dateTime={post.datetime} className="text-gray-500 py-2">
                     {post.date}
                   </time>
                   {post.labels.map((postLabel) => (
@@ -137,6 +138,14 @@ export default function Home() {
                   ))}
                 </div>
                 <div className="group relative">
+                  {/* <i  alt="IMG"></i> */}
+                  <Image
+                    width={300}
+                    height={400}
+                    src={`https://picsum.photos/300/400?random=${post.id}`}
+                    alt="Brookeslogo"
+                    className="max-h-32 inline-block mt-1"
+                  />
                   <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
                     <a>
                       <span className="absolute inset-0" />
