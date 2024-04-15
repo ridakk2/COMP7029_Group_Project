@@ -41,13 +41,13 @@ export default async function Post({ params }: { params: { slug: string } }) {
           </div>
 
           <Image
-            src={'https://picsum.photos/100/100'}
+            src={`https://picsum.photos/100/100?random=${post.id}`}
             width={0}
             height={0}
             sizes="100"
             style={{ width: '80%', height: 'auto' }}
             alt={'image alt text'}
-            className="mx-auto rounded-lg mb-10"
+            className="mx-auto mb-10"
           />
 
           {post.abstract && (

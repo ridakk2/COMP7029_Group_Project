@@ -19,6 +19,12 @@ export default function Header() {
     router.push('/');
   }
 
+  async function handleClick(event: { preventDefault: () => void }) {
+    event.preventDefault();
+
+    router.push('/new-post');
+  }
+
   return (
     showHeader && (
       <header className="bg-white">
@@ -27,6 +33,14 @@ export default function Header() {
             <Image src="/Brookeslogo.png" width={200} height={200} alt="logo" />
           </div>
           <div className="flex flex-1 justify-end">
+            {isLoggedIn && pathname !== '/new-post' && (
+              <a
+                className="text-sm font-semibold leading-6 text-brookes underline underline-offset-1 mr-5"
+                onClick={handleClick}
+              >
+                Create New Post <span aria-hidden="true"></span>
+              </a>
+            )}
             {isLoggedIn && (
               <a href="/login" className="text-sm font-semibold leading-6 text-gray-900" onClick={handleLogout}>
                 Log out <span aria-hidden="true">&rarr;</span>

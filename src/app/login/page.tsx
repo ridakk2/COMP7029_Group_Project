@@ -40,7 +40,7 @@ export default function Login() {
       const data = await response.json();
       setUser(data);
 
-      router.push('/new-post');
+      router.push(`/user/${data.id}-${data.firstName}-${data.lastName}`.toLowerCase());
     } else {
       const data = await response.json();
 
