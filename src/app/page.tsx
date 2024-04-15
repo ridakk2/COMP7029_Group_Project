@@ -6,6 +6,7 @@ import { useState, useEffect } from 'react';
 import { I_post } from '../app/api/posts/route';
 import { UserIcon, EnvelopeIcon } from '@heroicons/react/20/solid';
 import Button from './components/button';
+import Image from 'next/image';
 
 const formatDate = (dateString: string) => {
   const date = new Date(dateString);
@@ -98,10 +99,14 @@ export default function Home() {
     <div className="bg-white py-8 sm:py-12">
       <div className="mx-auto max-w-7xl px-6 lg:px-8 relative">
         <div className="bg-white py-8 px-5 top-0 left-0 right-0 ml-0">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-6xl">TDE Research Blog</h2>
+          <div className="flex items-center justify-center mb-10">
+            <Image width={640} height={480} src="/keyboard.jpg" alt="keybord picture" />
+          </div>
+          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-6xl">Oxford Brookes Tech Seeds</h2>
+
           <p className="mt-2 text-lg leading-8 text-gray-600">
             Research in the Faculty of TDE is based around powerful well led research groupings that benefit from the
-            high level complementary skills and expertise of their members.
+            high level complementary skills and expertise of their members. Find the tech seeds for innovation here.
           </p>
         </div>
 
