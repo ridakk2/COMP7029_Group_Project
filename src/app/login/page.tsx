@@ -50,6 +50,20 @@ export default function Login() {
 
   return (
     <>
+      <div
+        className="relative flex min-h-full flex-1 flex-col justify-center items-center px-6 py-12 lg:px-8"
+        style={{ position: 'relative' }}
+      >
+        <Image
+          width={900}
+          height={700}
+          src="/login.jpeg"
+          alt="Image of shaking hands for colloboration"
+          // style={{ maxWidth: '100%', maxHeight: '100%' }}
+          className="top-0 left-0 right-0 bottom-0 mx-auto my-auto"
+        />
+      </div>
+
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <div className="block text-center">
