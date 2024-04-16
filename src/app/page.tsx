@@ -25,6 +25,10 @@ const formatDate = (dateString: string) => {
   return [formattedDate, formattedDateLong];
 };
 
+const getUserLink = (user: { id: number; firstName: string; lastName: string }) => {
+  return `${user.id}-${user.firstName}-${user.lastName}`.toLowerCase();
+};
+
 export default function Home() {
   const [searchInput, setSearchInput] = useState('');
   const [loading, setLoading] = useState(false);
@@ -40,7 +44,7 @@ export default function Home() {
 
       setPosts(
         data.results.map((post: I_post) => {
-          const [shortFormat, longFormat] = formatDate('2024-02-24T21:35:23.106Z');
+          const [shortFormat, longFormat] = formatDate(post.createdAt);
 
           return {
             ...post,
@@ -79,7 +83,7 @@ export default function Home() {
 
       setPosts(
         data.results.map((post: I_post) => {
-          const [shortFormat, longFormat] = formatDate('2024-02-24T21:35:23.106Z');
+          const [shortFormat, longFormat] = formatDate(post.createdAt);
 
           return {
             ...post,
@@ -162,12 +166,12 @@ export default function Home() {
                   </p>
                 </div>
                 <div className="relative mt-8 flex items-center gap-x-4">
-                  <Link href={`/user/${post.author.id}@${post.author.firstName}:${post.author.lastName}`}>
+                  <Link href={`/user/${getUserLink(post.author)}`}>
                     <UserIcon className="h-10 w-10 drop-shadow-lg" color="gray" />
                   </Link>
                   <div className="text-sm leading-6">
                     <p className="font-semibold text-gray-900">
-                      <Link href={`/user/${post.author.id}@${post.author.firstName}:${post.author.lastName}`}>
+                      <Link href={`/user/${getUserLink(post.author)}`}>
                         <span className="absolute inset-0" />
                         {post.author.firstName} {post.author.lastName}
                       </Link>

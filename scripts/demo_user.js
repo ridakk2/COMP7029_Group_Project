@@ -22,8 +22,8 @@ async function addDemoUser() {
       demoUser = await prisma.user.create({
         data: {
           email: 'demo1@example.com',
-          firstName: 'Demo',
-          lastName: 'User',
+          firstName: 'Joann',
+          lastName: 'Osinski',
           password: await bcrypt.hash('password123', 12),
         },
       });
@@ -43,8 +43,10 @@ async function addDemoUser() {
       data: {
         title: 'Dr',
         organizations: 'Oxford Brookes University',
-        description: 'Bio/description',
-        publications: 'Publication',
+        description:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+        publications:
+          '2024 dolor sit amet: https://doi.org/bla/publications, incididunt ut labore: https://doi.org/dolore/publications,',
         twitterUrl: '@twitter',
         linkedinUrl: '@linkedin',
         githubUrl: '@github',
