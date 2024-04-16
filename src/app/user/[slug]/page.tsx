@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import prisma from '../../../../lib/prisma';
+import Link from 'next/link';
 
 const formatDate = (dateString: string) => {
   const date = new Date(dateString);
@@ -59,32 +60,34 @@ export default async function Post({ params }: { params: { slug: string } }) {
                 const [shortFormat, longFormat] = formatDate(post.createdAt);
 
                 return (
-                  <article key={post.id} className="flex max-w-xl flex-col items-start justify-between">
-                    <div className="flex items-center gap-x-4 text-xs">
-                      <time dateTime={shortFormat} className="text-gray-500">
-                        {longFormat}
-                      </time>
-                      {post.labels.map((postLabel) => (
-                        <span
-                          key={`${postLabel.postId}_${postLabel.labelId}`}
-                          className="inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10"
-                        >
-                          {postLabel.label.name}
-                        </span>
-                      ))}
-                    </div>
-                    <div className="group relative">
-                      <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
-                        <a>
-                          <span className="absolute inset-0" />
-                          {post.title}
-                        </a>
-                      </h3>
-                      <p className="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">
-                        <div dangerouslySetInnerHTML={{ __html: post.content || '' }} />
-                      </p>
-                    </div>
-                  </article>
+                  <Link key={post.id} href={`/post/${post.slug}`}>
+                    <article key={post.id} className="flex max-w-xl flex-col items-start justify-between">
+                      <div className="flex items-center gap-x-4 text-xs">
+                        <time dateTime={shortFormat} className="text-gray-500">
+                          {longFormat}
+                        </time>
+                        {post.labels.map((postLabel) => (
+                          <span
+                            key={`${postLabel.postId}_${postLabel.labelId}`}
+                            className="inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10"
+                          >
+                            {postLabel.label.name}
+                          </span>
+                        ))}
+                      </div>
+                      <div className="group relative">
+                        <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
+                          <a>
+                            <span className="absolute inset-0" />
+                            {post.title}
+                          </a>
+                        </h3>
+                        <p className="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">
+                          <div dangerouslySetInnerHTML={{ __html: post.content || '' }} />
+                        </p>
+                      </div>
+                    </article>
+                  </Link>
                 );
               })}
             </div>

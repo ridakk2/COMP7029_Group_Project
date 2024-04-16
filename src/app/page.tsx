@@ -1,8 +1,6 @@
 // Parent component
 'use client';
 import Link from 'next/link';
-import Image from 'next/image';
-
 import { useState, useEffect } from 'react';
 import { I_post } from '../app/api/posts/route';
 import { UserIcon, EnvelopeIcon } from '@heroicons/react/20/solid';

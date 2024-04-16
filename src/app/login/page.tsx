@@ -75,9 +75,6 @@ export default function Login() {
               className="max-h-16 inline-block"
             />
           </div>
-          <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
-            Oxford Brookes Research Blog Page
-          </h2>
         </div>
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
