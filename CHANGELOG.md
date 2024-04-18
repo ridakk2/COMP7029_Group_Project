@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.1.2](https://github-brookes/ridakk2/COMP7029_Group_Project/compare/v0.1.1...v0.1.2) (2024-04-18)
+
+
+### Features
+
+* **group-58:** create a Profile table in the DB ([ce8af47](https://github-brookes/ridakk2/COMP7029_Group_Project/commit/ce8af47006ca64e3c3a5bc36a3b6371bc3fc3300))
+* **group-59:** add demo user profile ([6fc4499](https://github-brookes/ridakk2/COMP7029_Group_Project/commit/6fc44998e21091360382bd47047ee97a2b861ea9))
+* **group-61:** public profile page of creators ([196fca3](https://github-brookes/ridakk2/COMP7029_Group_Project/commit/196fca330104b7338e5bf13c1dbcfb7475085c55))
+* **group-62:** add new fields to post creation page ([6867f6b](https://github-brookes/ridakk2/COMP7029_Group_Project/commit/6867f6bbdddae2a2c517f64c0b476c5031cf57d9))
+* **group-65:** post detail page implementation and routing from main landing page ([3f440a6](https://github-brookes/ridakk2/COMP7029_Group_Project/commit/3f440a63e3350cebea1659f793988f17ac152b06))
+* **group-74:** add an image to the login page ([9304e51](https://github-brookes/ridakk2/COMP7029_Group_Project/commit/9304e5112a5de39d285c435484de1e561016a12e))
+* **group-76:** add an image to main landing page ([ccc24e6](https://github-brookes/ridakk2/COMP7029_Group_Project/commit/ccc24e65dc19c7098b408cd8ee92608229ce2e60))
+* **image in blogs:** addition of image in list view of blog posts ([1fe518e](https://github-brookes/ridakk2/COMP7029_Group_Project/commit/1fe518ed0e10fe37055d73c6fcbb6043afe64090))
+
+
+### Bug Fixes
+
+* **group-34:** correct color extension & add button with loader ([a516ba4](https://github-brookes/ridakk2/COMP7029_Group_Project/commit/a516ba49ed25bc15118bb776199b645f5ea3b24b))
+* **group-40:** remove duplicate dependecy and add link to post detail from user profile ([a8b2465](https://github-brookes/ridakk2/COMP7029_Group_Project/commit/a8b2465a456b9fddd8fe28adfd81a940c435c09b))
+* **group-63:** to add additional lables in the post creation ([3817eb6](https://github-brookes/ridakk2/COMP7029_Group_Project/commit/3817eb61bee8bcb405f5aad15f76d5132887096e))
+* update image links and reduce paddings in login page ([323852d](https://github-brookes/ridakk2/COMP7029_Group_Project/commit/323852d4f7f1810cc7ef8a83aef997485330f49a))
+
 ## 0.1.1 (2024-03-06)
 
 
