@@ -41,7 +41,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
           </div>
 
           <Image
-            src={`https://picsum.photos/100/100?random=${post.id}`}
+            src={`https://picsum.photos/300/400?random=${post.id}`}
             width={0}
             height={0}
             sizes="100"

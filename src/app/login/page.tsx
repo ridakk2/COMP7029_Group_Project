@@ -51,7 +51,7 @@ export default function Login() {
   return (
     <>
       <div
-        className="relative flex min-h-full flex-1 flex-col justify-center items-center px-6 py-12 lg:px-8"
+        className="relative flex min-h-full flex-1 flex-col justify-center items-center px-6 pt-12 lg:px-8"
         style={{ position: 'relative' }}
       >
         <Image
@@ -64,7 +64,7 @@ export default function Login() {
         />
       </div>
 
-      <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
+      <div className="flex min-h-full flex-1 flex-col justify-center px-6 pt-6 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <div className="block text-center">
             <Image
@@ -77,7 +77,7 @@ export default function Login() {
           </div>
         </div>
 
-        <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+        <div className="mt-5 sm:mx-auto sm:w-full sm:max-w-sm">
           <div className="space-y-6">
             <div>
               <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">

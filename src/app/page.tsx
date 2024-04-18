@@ -145,12 +145,11 @@ export default function Home() {
                   ))}
                 </div>
                 <div className="group relative">
-                  {/* <i  alt="IMG"></i> */}
                   <Image
                     width={300}
                     height={400}
                     src={`https://picsum.photos/300/400?random=${post.id}`}
-                    alt="Brookeslogo"
+                    alt="image text"
                     className="max-h-32 inline-block mt-1"
                   />
                   <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
